@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>JS</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="CSS/aula11.css">
+		<script src="js/script.js"></script>
+	</head>
+	<body>
+		<h1>Aula de JavaScript</h1>	
+		<div>
+			<h3>Página de login</h3>
+			<div class="login">
+				Email <input type="email" placeholder="Inserir email" id="frmemail">
+				Senha<input type="password" placeholder="Inserir senha" id="frmsenha"><br>
+			</div>
+			<!--
+				<input type="button" value="Fazer Login"><br>
+				<input type="submit">
+			-->
+			<button onclick="login()">Login</button>
+		</div>
+			<br></br>
+			<br></br>
+		<div>
+			<h3>Exemplo 2- Operações simples usando JS</h3>
+			<button onclick="somar()">Somar</button>
+			<button onclick="subtrair()">Subtrair</button>
+			<button onclick="multiplicar()">Multiplicar</button>
+			<button onclick="dividir()">Dividir</button>
+			<button onclick="quadrado()">Quadrado</button>
+			<button onclick="raiz()">Raiz quadrada</button>
+		</div>
+		<br></br>
+		<br></br>
+		<div>
+			<h3>Exemplo 3 - Pegando informações do HTML e inserindo no HTML</h3>
+			<p id="exibir_nome">Nome</p>
+			<input type="text" placeholder="Inserir nome" id="frmnome">
+			<button onclick="nome()">Adicionar Nome</button>
+			<div>
+				<br>
+				<h3>Ex 1- Adicionando dados em uma lista</h3>
+				<br>
+				<ul>
+					<h2>Lista de Produtos</h2>
+					<br>
+					<li id="produto">(Produto)</li>
+				</ul>
+				<input type="text" placeholder="Inserir produto" id="frmproduto">
+				<button onclick="addproduto()">Adicionar Produto</button>
+			</div>
+		</div>
+
+	</body>
+
+</html>
