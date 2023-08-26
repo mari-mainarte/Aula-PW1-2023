@@ -22,5 +22,8 @@ h3{
     display: flex;
    
 }
-
+ul{
+    list-style: none;
+    font-family: arial;
+}
 
