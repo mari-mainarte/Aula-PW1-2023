@@ -4,9 +4,9 @@
 
 function criaObjeto(){
    usuario = {
-    nome: document.getElementById("frmnome").value,
-    idade: document.getElementById("frmidade").value,
-    time: document.getElementById("frmtime").value
+    nome: prompt("Digite seu nome: "),
+    idade: prompt("Digite sua idade: "),
+    time: prompt("Digite seu time favorito: ")
    }
    console.log(usuario)
 }

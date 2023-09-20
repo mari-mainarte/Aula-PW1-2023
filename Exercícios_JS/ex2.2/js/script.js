@@ -2,9 +2,9 @@
 // conteúdo da função
 //}
 
-function subtraiNumeros(){
-    let n1 = parseInt(prompt("Digite o primeiro numero: "))
-    let n2 = parseInt(prompt("Digite o segundo numero: "))
-    let sub = n1-n2
-    console.log("Resultado: ", sub)
+function subtraiNumeros(n1,n2){
+    console.log("Resultado: ", n1-n2)
 }
+
+let n1 = 100;
+let n2 = 40;
