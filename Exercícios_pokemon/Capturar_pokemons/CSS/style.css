@@ -1,32 +1,121 @@
-#pokedexList div{
+#pokedexList{
     font-family: arial;
     font-size: 20px;
     list-style: none;
+    font-weight: 500;
     display: grid;
-    font-weight: 550;
-    grid-template-columns: 250px 250px 250px 250px 250px 250px;
-    justify-content: center;
+    grid-template-columns: auto auto auto;
+    margin-top: 70px;
 }
 
-#btn{
-    background-color: aquamarine;
-    padding: 50px;
+#pokedexList li{
+    background-color: rgb(232, 240, 255);
+    border-radius: 10px;
+    box-shadow: 7px 8px rgba(68, 116, 161, 0.753);
+    height: 60%;
+    width: 230px;
+    padding-bottom: 100px;
+    margin-left: 130px;
+    color: white;
+    padding-left: 20px;
 }
 
-#pokLi{
-    display: inline;
+#pokedexList img{
+    height: 180px;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+#pokedexList button{
+    text-decoration: none;
+    color: white;
+    background-color: red;
+    padding: 9px;
+    border-radius: 8px;
+    margin-top: 30px;
+    font-family: arial;
+}
+
+#pok_modal{
+   list-style: none;
+}
+
+#nomePokemon{
+    margin-left: 270px;
+}
+
+#info{
+    display: flex;
+    flex-direction: rows;
+}
+
+#info span{
+    margin-top: 45px;
+    margin-right: 20px;
+    font-family: arial;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 #pokGif{
-    height: 200px;
-    width: 120px;
-    margin-left: 60px;
-    margin-top: 35px;
+    height: 130px;
+    margin-left: 55px;
+}
+
+#input{
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 800px;
+    width: 60px;
+    height: 40px;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+#alturaPokemon{
+    margin-top: 79px;
+    font-family: arial;
+    font-size: 25px;
+    font-weight: 300;
+    margin-left: 247px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+#pesoPokemon{
+    margin-top: 117px;
+    font-family: arial;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+#teste{
+    display: flex;
 }
 
 .pokebola{
     height: 30px;
     background-color: transparent;
+}
+
+.btn2{
+    position: sticky;
+    color: white;
+    background-color: red;
+    padding: 6px;
+    border-radius: 4px;
+    width: 70px;
+    height: 40px;
+}
+
+.btn{
+    color: white;
+    background-color: red;
+    padding: 6px;
+    border-radius: 4px;
+    width: 75px;
+    height: 30px;
+    margin-top: 42px;
 }
 
 .modal{
@@ -48,15 +137,16 @@
 
 .modal_img{
     display: grid;
-    width: 75%;
+    width: 5%;
     margin-top: 200px;
     margin-right: 300px;
     margin-left: 650px;
     grid-template-rows: 50px;
+    height: 3%;
 }
 
 .img_modal{
-    height: 450px;
+    height: 430px;
     border-radius: 10px;
 }
 
@@ -69,14 +159,13 @@
     font-weight: 600;
     font-size: 25px;
     font-family: arial;
-    margin-left: 550px;
+    margin-left: 530px;
     margin-top: 3px;
 }
 
 body{
-    background-color: rgb(43, 41, 41);
+    background-color: #7fb7e2;
 }
-
 
 h1{
     font-family: arial;
@@ -87,27 +176,20 @@ h1{
 
 h3{
     font-family: arial;
-    margin: 30px;
-    color: black;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 16px;
 }
 
-
-img{
-    height: 60px;
+h4{
+    color: rgb(48, 48, 48);
+    font-family: arial;
+    font-weight: 530;
+    margin-top: 0;
 }
 
-li{
-    background-color: white;
-    border-radius: 10px;
-    max-height: 200px;
-    margin-right: 10px;
-    margin-bottom: 15px;
-    color: black;
-    margin-top: 10px;
-}
-
-a{
-    margin-left: 23px;
-    color:black;
-    text-decoration: none;
+h5{
+    color: rgb(48, 48, 48);
+    font-family: arial;
+    font-weight: 400;
 }
