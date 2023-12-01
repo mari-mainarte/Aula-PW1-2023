@@ -1,7 +1,7 @@
 const POKURL = 'https://pokeapi.co/api/v2/pokemon/'
 
 function showPokemonById(){
-    fetch(POKURL + "?limit=151").then( async (response) => {
+    fetch(POKURL + "?limit=251").then( async (response) => {
         if(response.status == 200){
             let input = document.getElementById("pokId").value
             let pokemonGif = document.getElementById("pokemonGif")
@@ -17,7 +17,7 @@ function showPokemonById(){
                 const result = api.results
                 console.log(result[input-1])
 
-                if(input<=0||input>1292){
+                if(input<=0||input>251){
                     pokemonName.innerHTML = "Não encontrado"
                     pokemonGif.src = " "
                 }
