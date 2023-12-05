@@ -2,17 +2,17 @@ const POKURL = 'https://pokeapi.co/api/v2/pokemon/'
     //pokemonIcon.src = pokImg['sprites']['versions']['generation-vii']['icons']['front_default']
 
 let pokedex = []
-    fetch(POKURL + '?limit=251').then( (response) => {
+    fetch(POKURL + "?limit=251").then( (response) => {
         if(response.status == 200){
             pokedex = response.json().then( (api) => {
                 console.log(api.results)
-                fetch(api.results.map( async (pokLi) => {
+                api.results.map((pokLi) => {
                     let pokemonLi = document.createElement("li")
                     let pokemonImg = document.createElement("img")
                     let pokemonName = document.createElement("h4")
                     let idPokemon = document.createElement("h5")
-                    await fetch(pokLi.url).then( pokInfo => { pokeIcon = pokInfo.json().then( (pokImg) => {(pokemonImg.src = pokImg['sprites']['front_default'])})})
-                    await fetch(pokLi.url).then( pokId => { pokeId = pokId.json().then( (id_pok) => {(idPokemon.innerHTML = "Nº " + id_pok['id'])})})
+                    fetch(pokLi.url).then( pokInfo => { pokeIcon = pokInfo.json().then( (pokImg) => {(pokemonImg.src = pokImg['sprites']['front_default'])})})
+                    fetch(pokLi.url).then( pokId => { pokeId = pokId.json().then( (id_pok) => {(idPokemon.innerHTML = "Nº " + id_pok['id'])})})
                     pokemonName.innerHTML = pokLi.name
                     pokemonLi.innerHTML = 
                      `
@@ -23,7 +23,7 @@ let pokedex = []
                     pokemonLi.appendChild(idPokemon)
                     pokemonLi.appendChild(pokemonName)
                     document.getElementById("pokedexList").appendChild(pokemonLi)
-                }))
+                })
                 return api
             })
             return pokedex
@@ -94,3 +94,4 @@ function showModal(){
         }
     })
 }
+
