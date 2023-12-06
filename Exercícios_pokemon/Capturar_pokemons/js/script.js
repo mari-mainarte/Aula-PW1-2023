@@ -41,8 +41,6 @@ function showModal(){
             let pokemonId = document.getElementById("idPokemon")
             let pokemonH = document.getElementById("alturaPokemon")
             let pokemonP = document.getElementById("pesoPokemon")
-            let pokemonType = document.getElementById("type")
-            let pokemonType2 = document.getElementById("type2")
             let pokemonText = document.getElementById("text")
             pokemonId.innerHTML = ""
             pokemonGif.src = " "
@@ -67,25 +65,6 @@ function showModal(){
                             pokemonP.innerHTML = pokInfo.weight
                             if(pokemonGif.src == "null"){
                                 pokemonGif.src = pokInfo['sprites']['front_default']
-                            }
-                        })
-                    })
-                    await fetch(result[input-1]['url']).then( response => {
-                        response.json().then( pokInfo => {
-                            pokemonType.innerHTML = pokInfo['types']['0']['type']['name']
-                        })
-                    })
-                    await fetch(result[input-1]['url']).then( response => {
-                        response.json().then( pokInfo => {
-                            fetch(pokInfo['species']['url']).then( poktext => {
-                                poktext.json().then( ptxt => {
-                                    pokemonText.innerHTML = ptxt['flavor_text_entries']['0']['flavor_text']
-                                })
-                            })
-                            pokemonType2.innerHTML = pokInfo['types']['1']['type']['name']
-                            if(pokemonType2.innerHTML == "undefined")
-                            {
-                                pokemonType2.innerHTML = ""
                             }
                         })
                     })
