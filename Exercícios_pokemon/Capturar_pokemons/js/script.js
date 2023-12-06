@@ -14,9 +14,10 @@ let pokedex = []
                     fetch(pokLi.url).then( pokInfo => { pokeIcon = pokInfo.json().then( (pokImg) => {(pokemonImg.src = pokImg['sprites']['front_default'])})})
                     fetch(pokLi.url).then( pokId => { pokeId = pokId.json().then( (id_pok) => {(idPokemon.innerHTML = "Nº " + id_pok['id'])})})
                     pokemonName.innerHTML = pokLi.name
+                    pokemonImg.id = 'pokImg'
                     pokemonLi.innerHTML = 
                      `
-                        <button onclick="capturarPokemons()">Capturar</button>
+                        <button onclick="capturarPokemons()"><img src="pokebolla.png" id="pokball"></button>
                      `
                     
                     pokemonLi.appendChild(pokemonImg)
