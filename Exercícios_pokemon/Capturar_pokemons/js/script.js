@@ -1,6 +1,5 @@
 const POKURL = 'https://pokeapi.co/api/v2/pokemon/'
     //pokemonIcon.src = pokImg['sprites']['versions']['generation-vii']['icons']['front_default']
-
 let pokedex = []
     fetch(POKURL + "?limit=251").then( (response) => {
         if(response.status == 200){
@@ -13,10 +12,12 @@ let pokedex = []
                     let idPokemon = document.createElement("h5")
                     fetch(pokLi.url).then( pokInfo => { pokeIcon = pokInfo.json().then( (pokImg) => {(pokemonImg.src = pokImg['sprites']['front_default'])})})
                     fetch(pokLi.url).then( pokId => { pokeId = pokId.json().then( (id_pok) => {(idPokemon.innerHTML = "Nº " + id_pok['id'])})})
+                    fetch(pokLi.url).then( pokId => { pokeId = pokId.json().then( (id_pok) => {(pokemonLi.value = id_pok['id'])})})
                     pokemonName.innerHTML = pokLi.name
+                    pokemonImg.id = 'pokImg'
                     pokemonLi.innerHTML = 
                      `
-                        <button onclick="capturarPokemons()">Capturar</button>
+                        <button onclick="capturarPokemons()"><img src="pokebolla.png" id="pokball"></button>
                      `
                     
                     pokemonLi.appendChild(pokemonImg)
@@ -62,8 +63,8 @@ function showModal(){
                             pokemonName.innerHTML = pokInfo.name
                             pokemonGif.src = pokInfo['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
                             pokemonType.innerHTML = pokInfo['types']['name']
-                            pokemonH.innerHTML = pokInfo.height
-                            pokemonP.innerHTML = pokInfo.weight
+                            pokemonH.innerHTML = "Altura: " + pokInfo.height
+                            pokemonP.innerHTML = "Peso: " + pokInfo.weight
                             if(pokemonGif.src == "null"){
                                 pokemonGif.src = pokInfo['sprites']['front_default']
                             }
@@ -95,3 +96,30 @@ function showModal(){
     })
 }
 
+function capturarPokemons(input, pokemonLi){
+    let cont = 0
+    if(cont > 6){
+        alert("Voçê já tem um time completo!")
+    }else{
+        let pokTeam = document.createElement("img")
+        pokTeam.src = "pok_team.png"
+        pokTeam.id = 'pokTeam'
+        fetch(POKURL + "?limit=251").then( async (response) => {
+            if(response.status == 200){
+                let pokemonIcon = document.createElement("img")
+                const list_pok = response.json().then( async (api) => {
+                    const result = api.results
+                        await fetch(result[pokemonLi.value-1]['url']).then( response => {
+                            response.json().then( pokInfo => {
+                                pokemonIcon.src = pokInfo['sprites']['versions']['generation-vii']['icons']['front_default']
+                            })
+                        })
+                    }
+                )
+            }
+        })
+        document.getElementById("capturados").appendChild(pokTeam)
+        document.getElementById("capturados").appendChild(pokemonIcon)
+    }
+    console.log(team.length)
+}
