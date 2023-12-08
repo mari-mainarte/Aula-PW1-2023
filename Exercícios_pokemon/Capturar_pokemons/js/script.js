@@ -219,11 +219,10 @@ function capturarPokemonsInput(){
     })
 }
 
-function capturarPokemons(pokbtn){
+function capturarPokemons(){
     fetch(POKURL + "?limit=251").then( async (response) => {
         if(response.status == 200){
-            let pokemonBtn = pokbtn.value
-            console.log(pokemonBtn)
+            let pokemonBtn = document.getElementById("pokbtn").value
             let pokLi = document.createElement("li")
             let pokemonIcon = document.createElement("img")
             let pokName = document.createElement("h5")
